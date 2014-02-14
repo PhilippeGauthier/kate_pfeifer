@@ -1,0 +1,13 @@
+@mixin breakpoint($point) {
+
+  @if $point == 768px {
+    @media (min-width: 767px) { @content; }
+  }
+  @else if $point == 992px {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $point == 1200px {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+

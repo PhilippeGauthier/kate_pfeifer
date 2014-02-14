@@ -1,0 +1,211 @@
+
+.header-content {
+	text-align: center;
+	background: rgba(white,.1);
+	border-radius: 20px;
+	padding: 30px 30px;
+	margin-bottom: 50px;
+	h1, h2, h3, h4 {
+		text-shadow: 0 1px 0 rgba(black,0.15);
+	}
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: .01em;
+		font-size: 2em;
+		margin-bottom: 10px;
+		.big {
+			font-size: 1.15em;
+		}
+	}
+	h3 {
+		color: rgba(white,.8);
+		font-size: 1.2em;
+		margin-bottom: 5px;
+	}
+	h4 {
+		font-size: .9em;
+		letter-spacing: .05em;
+		color: rgba(white,.8);
+	}	
+
+	@include breakpoint (768px) {
+		padding: 75px;
+		h1 {
+			letter-spacing: .05em;
+			font-size: 3em;
+			.big {
+				font-size: 1.2em;
+			}
+		}
+		h3 {
+			font-size: 1.5em;
+			margin-top: 10px;
+		}
+		h4 {
+			font-size: 1.15em;
+		}
+	}
+	@include breakpoint (992px) {
+		padding: 100px 0;
+	}
+}
+
+
+#services-nav {
+	background: $servicesblue;
+	h2 {
+		color: darken(white,20%);
+		@include breakpoint (480px) {
+			color: white;
+		}
+	}
+	padding-bottom: 0;
+	.services-icon {
+		background-color: $kellygreen;
+	}
+	.therapy {
+		width: 100%;
+		li {
+			width: 100%;
+			line-min-height: 100%;
+			border-bottom: 1px solid lighten($servicesblue,6%);
+			&:last-of-type {
+				border-bottom: none;
+			}
+			a {
+				float: left;
+				letter-spacing: 0.05em;
+				font-size: 16px;
+				text-align: left;
+				padding: 20px 10px;
+				width: 100%;
+				position: relative;
+				box-sizing: border-box;
+				display: inline-block;
+				line-height: 24px;
+				&:hover,&:focus {
+					.main,.sub,.icon {
+						color: desaturate($kellygreen,20%);
+					}
+				}
+				.main {
+					text-align: left;
+					float: left;
+				}
+				.sub {
+					display: none;
+				}
+				.icon {
+					float: right;
+					font-size: 1em;
+					-webkit-transform:rotate(-180deg);
+					-moz-transform:rotate(-180deg); 
+					-o-transform:rotate(-180deg); 
+					transform:rotate(-180deg);
+					ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+					filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+				}
+				@include breakpoint (480px) {
+					padding: 30px 15px;
+					font-size: 16px;
+					.main {
+						font-weight: $light;
+						width: 48%;
+						font-size: 18px;
+					}
+					.icon {
+						font-size: 1.3em;
+						&:hover,&:focus {
+							color: desaturate($kellygreen,20%);
+						}
+					}
+					&:hover,&:focus {
+						color: desaturate($kellygreen,20%);
+						strong {
+							color: desaturate($kellygreen,20%);
+						}
+					}
+				}
+				@include breakpoint (768px) {
+					.sub {
+						display: inline-block;
+						color: darken(white,30%);
+						font-weight: $light;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+#contact {
+	.contact-icon {
+		background-color: $tealgreen;
+		span {
+			color: white;
+		}
+	}
+	a {
+		color: $tealgreen;
+		&:hover, &:focus {
+			color: $tealgreen
+		}
+		&.contact-nav {
+				@include trans (.75s);
+				color: rgba($darkblue,.8);
+				&:hover,&:focus {
+					color: rgba($darkblue,.9);
+				}
+		}
+	}
+	.address {
+		margin: 40px auto 0;
+		text-align: center;
+		span {
+			font-weight: $regular;
+			color: $darkblue;
+			font-size: 14px;
+			a {
+				font-size: 14px;
+				color: $darkblue;
+				&:hover,&:focus {
+					color: $darkblue;
+				}
+			}
+		}
+	}
+	#map-canvas {
+		margin-top: 60px;
+		height: 260px;
+		width: 100%;
+	}
+	@include breakpoint (480px) {
+		/*--IE won't accept min-height percentage--*/
+		min-height: 1300px;
+	}
+	@include breakpoint (768px) {
+		.address {
+			margin-bottom: 40px;
+		}
+		#map-canvas {
+			display: block;
+		    height: 400px;
+		    width: 100%;
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	font-weight: $light;
+	color: darken(white,30%);
+	background-color: $servicesblue;
+	padding: 15px 0;
+	@include breakpoint (480px) {
+		padding: 50px 0;
+	}
+}
+
+
+

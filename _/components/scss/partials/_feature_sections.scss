@@ -1,0 +1,66 @@
+
+.individual-banner {
+	padding: 20px;
+	background-color: rgba(white,0.9);
+	h2 {
+		font-weight: $regular;
+		color: rgba(black,0.6);
+		margin-bottom: 20px;
+	}
+	p {
+		font-weight: $regular;
+		color: rgba(black,.7);
+	}
+	@include breakpoint (768px) {
+		padding: 50px;
+		border-radius: 20px;
+		h2 {
+			margin-bottom: 50px;
+			text-align: left;
+		}
+	}
+}
+
+.landing {
+	@include background-simple ("../img/fields_small.jpg");
+	@include breakpoint (768px) {
+		@include background-simple ("../img/fields.jpg");
+	}
+}
+.about {
+	background-color: #334d5c;
+	@include breakpoint (768px) {
+		@include background-simple ("../img/water-lily.jpg");
+	}
+}
+.individuals {
+	background-color: #6897c1;
+	@include breakpoint (768px) {
+	@include background-simple ("../img/sf-row.jpg");
+}
+}
+.couples {
+	background-color: #c7bea0;
+	@include breakpoint (768px) {
+	@include background-simple ("../img/bench.jpg");
+}
+}
+.mothers {
+	background-color: #9cd0a8;
+	@include breakpoint (768px) {
+	@include background-simple ("../img/lady.jpg");
+}
+}
+.family {
+	background-color: #e27a3f;
+	@include breakpoint (768px) {
+	@include background-simple ("../img/boards.jpg");
+}
+}
+.fees {
+	background-color: #547980;
+	@include breakpoint (768px) {
+	@include background-simple ("../img/hills.jpg");
+}
+}
+

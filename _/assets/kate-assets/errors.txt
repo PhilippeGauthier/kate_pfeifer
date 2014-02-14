@@ -1,0 +1,5 @@
+[Thu Feb 13 2014 18:09:16 GMT-0800 (PST)]
+kate_side.jpg9: ImageMagick error: convert: MustSpecifyImageSize `-' @ error/rgb.c/ReadRGBImage/144.
+convert: NoImagesDefined `jpg:-' @ error/convert.c/ConvertImageCommand/3106.
+
+

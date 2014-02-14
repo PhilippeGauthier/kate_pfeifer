@@ -1,0 +1,25 @@
+@mixin btn-theme($btn-color) {
+	border-color: $btn-color;
+	background-color: $btn-color;
+	&:hover {
+		background-color: lighten($btn-color, 4%);
+		border-color: lighten ($btn-color, 4%);
+}
+}
+
+@mixin btnHallow-theme($btnHallow-color) {
+	border-color: $btnHallow-color;
+	background: none;
+	color: $btnHallow-color;
+	&:hover {
+		background-color: lighten($btnHallow-color, 4%);
+		border-color: lighten ($btnHallow-color, 4%);
+}
+}
+
+@mixin trans($val) {
+	-webkit-transition: $val;
+	-moz-transition: $val; 
+	-o-transition: $val; 
+	transition: $val; 
+}

@@ -1,0 +1,275 @@
+html, body, {
+	height: 100%;
+	font-size: 100%;
+}
+
+html, body,h1,h2,h3,h4,h5,p {
+	font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
+	color: white;
+}
+
+h1 {
+	font-weight: $light;
+	text-align: center;
+}
+
+h2,h3,h4,h5,a,p {
+	font-weight: $regular;
+	text-align: center;
+	@include breakpoint (480px) {
+		font-weight: $light;
+	}
+}
+
+h2 {
+	margin:10px auto 10px;
+	font-size: 1.4em;
+	letter-spacing: 0.03em;
+	@include breakpoint (480px) {
+		margin:0 auto 20px;
+		font-size: 1.5em;
+		letter-spacing: 0.05em;
+	}
+}
+
+h3 {
+	margin:0 auto 5px;
+	font-size: 1.1em;
+	letter-spacing: 0.01em;
+	@include breakpoint (480px) {
+		margin:0 auto 5px;
+		font-size: 1.3em;
+	}
+}
+
+h4 {
+	margin:0 auto 5px;
+	font-size: .65em;
+	letter-spacing: 0.01em;
+	line-height: 1.2em;
+	&:last-of-type {
+		margin-bottom: 20px;
+	}
+	@include breakpoint (480px) {
+		letter-spacing: 0.03em;
+		margin:0 auto 5px;
+		font-size: 1em;
+		&:last-of-type {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+p {
+	margin: 0 auto 16px;
+	text-align: left;
+	font-size: 1em;
+	line-height: 1.25em;  
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	@include breakpoint (480px) {
+		margin-bottom: 20px;
+		font-size: 1.125em;
+	}
+}
+
+a {
+	color: white;
+	letter-spacing: 0.01em;
+	&:hover, &:focus {
+		color: white;
+		text-decoration: none;
+	}
+	@include breakpoint (480px) {
+		letter-spacing: 0.03em;
+	}
+}
+
+ul {
+	list-style-type: none;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+li {
+	display: inline-block;
+}
+
+section, header {	
+	@include flexbox;
+	@include flex-wrap (nowrap);
+	@include flex-direction (column);
+	@include justify-content (space-between);
+	@include align-items (center);
+	@include breakpoint (768px) {
+		min-height: 100%;
+				/*--IE Hack --*/
+		@media screen and (min-width:0\0) { 
+		height: 100%;
+		}
+				/*--End IE Hack --*/
+	}
+}
+
+section {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	/*--To remove padding once flexbox takes over for spacing w/ 100% height--*/
+	@include breakpoint (480px) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+}
+
+.left {
+	text-align: left;
+}
+
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
+.flex-wrapper {
+	@include flexbox;
+	 /*--required for FF & Safari--*/
+	@include flex (1,1,auto);
+	@include flex-direction (column);
+	@include justify-content (center);
+	&.start {
+		@include justify-content (flex-start);
+	}
+	&.center {
+		@include justify-content (center);
+	}
+	&.end {
+		@include justify-content (flex-end);
+	}
+	/*--End FF & Safari fix--*/
+}
+
+.dark {
+	h1,h2,h3,h4,h5,span {
+		color: $darkblue;
+	}
+	p {
+		color: darken($darkblue,10%);
+	}
+	a {
+		color: $darkblue;
+		&:hover, &:focus {
+			color: $darkblue;
+		}
+	}
+}
+
+.upper-nav {
+	@include flexbox;
+	margin: 0 auto;
+	text-transform: uppercase;
+	padding: 30px 0 30px;
+	&.upper-nav-standalone {
+		padding: 30px 0;
+	}
+	a {
+		letter-spacing: 0.01em;
+		font-weight: $regular;
+		font-size: 1em;
+		&.logo {
+			@include flexbox;
+			margin: 0 9px;
+		}
+		font-size: 12px;
+		&.header-nav {
+			text-align: center;
+			margin: 0 9px;
+			&.fee {
+				display: none;
+			}
+		}
+	}
+
+	@include breakpoint (768px) {
+		padding-bottom: 0;
+		a {
+			font-weight: $regular;
+			letter-spacing: 0.05em;
+			&.logo {
+				margin: 0;
+				@include flex (1,1,auto);
+			}
+			&.header-nav {
+				&.fee {
+					display: inline;
+				}
+				text-align: right;
+				margin-left: 40px;
+			}
+		font-size: 16px;
+		}
+	}
+}
+
+.landing-icon {
+	margin: 0 auto 40px;
+	border-radius: 50%;
+	height: 125px;
+	width: 125px;
+	text-align: center;
+	font-size: 2.25em;
+	color: white;
+	.icon:before {
+		margin: 0;
+		padding-top: 39%;
+	}
+	/*--Removed for kate's flower, may revert--*/
+	// .icon-world {
+	// 	color: white;
+	// 	margin: 40px auto 0;
+	// 	padding-top: 50%;
+	// }
+	@include breakpoint (480px) {
+		height: 150px;
+		width: 150px;
+		margin: 40px auto 40px;
+		h2 {
+			margin-bottom: 40px;
+			font-size: 2em;
+		}
+	}
+}
+
+.img-circle {
+	@include flexbox;
+	max-width: 125px;
+	max-height: 125px;
+	margin: 0 auto 20px;
+	@include breakpoint (480px) {
+		margin: 40px auto;
+		max-height: 150px;
+		max-width: 150px;
+	}
+}
+
+
+.img-rectangle {
+	border-radius: 5px;
+	@include flexbox;
+	max-width: 125px;
+	max-height: 125px;
+	margin: 0 auto 20px;
+	@include breakpoint (480px) {
+		margin: 40px auto;
+		max-height: 200px;
+		max-width: 200px;
+	}
+}
+
+
